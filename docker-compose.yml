@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  frontend:
+    stdin_open: true
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    networks:
+      - frontend
+    depends_on:
+      # - db
+      - backend
+    ports:
+      - 8000:8000
+  backend:
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    networks:
+      - backend
+    # depends_on:
+    #   - db
+    ports:
+      - 3000:3000
+  # db:
+  #   container_name: database
+  #   image: mongo:latest
+  #   networks:
+  #     - backend
+  #   ports:
+  #     - 27017:27017
+
+networks:
+  frontend:
+  backend:
