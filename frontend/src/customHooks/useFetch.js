@@ -11,7 +11,7 @@ const useFetch = (url, options) => {
     const fetchData = async (url, options) => {
       try {
         const response = await fetch(url, options);
-        const data = await response.json();
+        const { data } = await response.json();
         setApiData(() => data);
         setIsLoading(false);
       } catch (error) {

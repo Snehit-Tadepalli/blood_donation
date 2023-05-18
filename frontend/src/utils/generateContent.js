@@ -2,9 +2,9 @@ const generateContent = (isLoading, apiData, apiError) => {
   if (isLoading) {
     return "Loading...";
   } else if (!isLoading && apiData !== null) {
-    return apiData.message;
+    return apiData;
   } else if (!isLoading && apiError !== null) {
-    return apiError.message;
+    return apiError;
   }
 };
 

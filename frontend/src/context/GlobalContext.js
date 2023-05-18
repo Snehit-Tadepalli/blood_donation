@@ -14,8 +14,6 @@ const GlobalContext = React.createContext(initialState);
 
 const initialStateReducerFunction = (state, action) => {
   switch (action.type) {
-    case "a":
-      return state;
     default:
       return state;
   }

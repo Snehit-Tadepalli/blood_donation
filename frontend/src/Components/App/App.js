@@ -1,20 +1,18 @@
 import React from "react";
-// import styles from "./App.module.css";
-import useFetch from "../../customHooks/useFetch";
-import generateContent from "../../utils/generateContent";
-import { GlobalContext } from "../../context/GlobalContext";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
 
-const fetchOptions = { method: "GET" };
+// import styles from "./App.module.css";
 
 const App = () => {
-  const globalContext = React.useContext(GlobalContext);
-  const url = globalContext.initialStateVariable.rootUrl;
-
-  const { isLoading, apiData, apiError } = useFetch(url, fetchOptions);
-
-  let content = generateContent(isLoading, apiData, apiError);
-
-  return <h1>{content}</h1>;
+  return (
+    <React.Fragment>
+      <Header />
+      <Main />
+      <Footer />
+    </React.Fragment>
+  );
 };
 
 export default App;
